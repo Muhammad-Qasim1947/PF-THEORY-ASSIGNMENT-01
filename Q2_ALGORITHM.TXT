@@ -1,11 +1,9 @@
-START
-Input user. "Enter The Coordinates Of X And Y"
+ASK THE USER FOR The Coordinates Of X And Y
 Read Values of X and Y
-IF X>0 AND Y>0 THEN Print "The Coordinates Lie In The First Quadrant"
-ELSEIF X<0 AND Y>0 THEN Print "The Coordinates Lie In The Second Quadrant"
-ELSEIF X<0 AND Y<0 THEN Print "The Coordinates Lie In The Third Quadrant"
-ELSEIF X>0 AND Y<0 THEN Print "The Coordinates Lie In The Fourth Quadrant"
-ELSE IF X=0 AND Y=0 THEN Print "The Coordinates Lie At The Origin"
-ELSE IF X=0 AND Y≠0 THEN Print "The Coordinates Lie On Y-Axis"
-ELSE Print "The Coordinates Lie On X-Axis"
-END
+IF X>0 AND Y>0 THEN DISPLAY "The Coordinates Lie In The First Quadrant"
+ELSEIF X<0 AND Y>0 THEN DISPLAY "The Coordinates Lie In The Second Quadrant"
+ELSEIF X<0 AND Y<0 THEN DISPLAY "The Coordinates Lie In The Third Quadrant"
+ELSEIF X>0 AND Y<0 THEN DISPLAY "The Coordinates Lie In The Fourth Quadrant"
+ELSE IF X=0 AND Y=0 THEN DISPLAY "The Coordinates Lie At The Origin"
+ELSE IF X=0 AND Y≠0 THEN DISPLAY "The Coordinates Lie On Y-Axis"
+ELSE DISPLAY "The Coordinates Lie On X-Axis"
