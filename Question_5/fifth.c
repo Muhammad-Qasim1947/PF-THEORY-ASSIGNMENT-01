@@ -11,44 +11,40 @@ do{
    count0 += 1 ;
    }
 
-   else if (num==0){
+   else if (num==1){
    count0 += 1 ;
    }
 
-   else if (num==1){
+   else if (num==2){
    count1 += 1 ;
    }
 
-   else if (num==2){
+   else if (num==3){
    count2 += 1 ;
    }
 
-   else if (num==3){
+   else if (num==4){
    count3 += 1 ;
    }
 
-   else if (num==4){
+   else if (num==5){
    count4 += 1 ;
    }
 
-   else if (num==5){
+   else if (num==6){
    count5 += 1 ;
    }
 
-   else if (num==6){
+   else if (num==7){
    count6 += 1 ;
    }
 
-   else if (num==7){
+   else if (num==8){
    count7 += 1 ;
    }
 
-   else if (num==8){
-   count8 += 1 ;
-   }
-
    else if (num==9){
-   count9 += 1 ;
+   count8 += 1 ;
    }
    
 } while (num>=0 && num<=9);
@@ -67,3 +63,4 @@ printf(" 9\t%d\n",count9);
 return 0;
 
 }
+
