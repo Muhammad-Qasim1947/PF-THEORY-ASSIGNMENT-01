@@ -1,25 +1,14 @@
-Start
-Input 5 card numbers → a, b, c, d, e.
-Check if each card number is between 1 and 13.
-If any number is invalid → Output "INVALID CARD VALUE, MUST BE BETWEEN 1-13" and Stop.
-Initialize an array count[1..13] with all values = 0.
-Increment the frequency of each entered card:
-
-count[a] = count[a] + 1
-count[b] = count[b] + 1
-count[c] = count[c] + 1
-count[d] = count[d] + 1
-count[e] = count[e] + 1
-
-Initialize two variables: three = 0, two = 0.
-For each card value from 1 to 13 (done without loop in your program):
-
-If count[i] = 3, set three = 1.
-If count[i] = 2, set two = 1.
-
-After all checks, test the condition:
-
-If three = 1 AND two = 1, then Output "The Hand Is A Full House".
-OTHERWISE, Output "The Hand Is Not A Full House".
-
-Stop
+Ask the user to enter five card ranks (numbers between 1 and 13).
+Store the first card as rank1, and set rank1’s count to 1.
+Look at the second card:
+If it matches rank1, increase rank1’s count.
+Otherwise, store it as rank2 and set rank2’s count to 1.
+Look at the third card:
+If it matches rank1, increase rank1’s count.
+If it doesn’t match rank1 and rank2 is not yet set, make it rank2 and set rank2’s count to 1.
+If it matches rank2, increase rank2’s count.
+Look at the fourth card, and repeat the same steps as with the third card
+Look at the fifth card, and repeat the same steps as with the third card.
+After checking all cards, see if the counts are 3 and 2 in any order.
+If yes, display “This hand is a Poker Full House.”
+If not, display “This hand is not a Poker Full House.”
