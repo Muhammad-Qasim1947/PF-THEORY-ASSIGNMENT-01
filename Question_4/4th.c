@@ -1,73 +1,66 @@
 #include <stdio.h>
 int main(){
-    int a,b,c,d,e;
-    int count[14]={0};
+    int card1 , card2 , card3 , card4 , card5 ;
+    int rank1 , rank2 , rank1count=0 , rank2count=0;
 
-    printf("Enter 5 Card Numbers : ");
-    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
-    if (a<1 || a>13 || 
-        b<1 || b>13 ||
-        c<1 || c>13 ||
-        d<1 || d>13 ||
-        e<1 || e>13 ){
-            printf("INVALID CARD VALUE , MUST BE BETWEEN 1-13");
-        return 1;
-        }
-  
-    count[a]++;
-    count[b]++;
-    count[c]++;
-    count[d]++;
-    count[e]++;
+printf("Enter The Rank Of Your Poker Hand One By One\n");
+printf("Rank Of Card1 : ");
+scanf(" %d",&card1);
+printf("Rank Of Card2 : ");
+scanf(" %d",&card2);
+printf("Rank Of Card3 : ");
+scanf(" %d",&card3);
+printf("Rank Of Card4 : ");
+scanf(" %d",&card4);
+printf("Rank Of Card5 : ");
+scanf(" %d",&card5);
+   
+    rank1 = card1;
+    rank1count += 1;
 
-    int three = 0 , two = 0;
-
-if (count[1] == 3) three = 1;
-if (count[1] == 2) two = 1;
-
-if (count[2] == 3) three = 1;
-if (count[2] == 2) two = 1;
-
-if (count[3] == 3) three = 1;
-if (count[3] == 2) two = 1;
-
-if (count[4] == 3) three = 1;
-if (count[4] == 2) two = 1;
-
-if (count[5] == 3) three = 1;
-if (count[5] == 2) two = 1;
-
-if (count[6] == 3) three = 1;
-if (count[6] == 2) two = 1;
-
-if (count[7] == 3) three = 1;
-if (count[7] == 2) two = 1;
-
-if (count[8] == 3) three = 1;
-if (count[8] == 2) two = 1;
-
-if (count[9] == 3) three = 1;
-if (count[9] == 2) two = 1;
-
-if (count[10] == 3) three = 1;
-if (count[10] == 2) two = 1;
-
-if (count[11] == 3) three = 1;
-if (count[11] == 2) two = 1;
-
-if (count[12] == 3) three = 1;
-if (count[12] == 2) two = 1;
-
-if (count[13] == 3) three = 1;
-if (count[13] == 2) two = 1;
-
-if (three && two){
-    printf("The Hand Is A Full House.\n");
-}
-else{
-    printf("The HAND Is Not A Full House.\n");
+if ( card2 == rank1 ){
+    rank1count += 1 ;
+} else {
+    rank2 = card2 ;
+    rank2count += 1 ;
 }
 
+    if (card3 == rank1){    
+    rank1count += 1 ;
+    } else {
+    if (rank2count == 0){
+       rank2 = card3 ;
+       rank2count += 1 ;
+    } else if (card3 == rank2)
+       rank2count += 1 ;
+    }
+
+        if (card4 == rank1){    
+        rank1count += 1 ;
+        } else {
+        if (rank2count == 0){
+        rank2 = card4 ;
+        rank2count += 1 ;
+        } else if (card4 == rank2)
+        rank2count += 1 ;
+        }    
+     
+            if (card5 == rank1){    
+            rank1count += 1 ;
+            } else {
+            if (rank2count == 0){
+            card5 = rank2 ;
+            rank2count += 1 ;
+            } else if (card5 == rank2)
+            rank2count += 1 ;
+            }
+
+    if ((rank1count == 3 && rank2count == 2 ) || ( rank2count == 3 && rank1count == 2)){
+  printf("This Hand Is A Poker Full House");
+} else {
+    printf("This Hand Is Not A Poker Full House") ;
+}
 return 0;
-
 }
+
+
