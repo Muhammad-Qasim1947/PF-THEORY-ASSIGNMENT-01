@@ -1,0 +1,25 @@
+Start
+Input 5 card numbers → a, b, c, d, e.
+Check if each card number is between 1 and 13.
+If any number is invalid → Output "INVALID CARD VALUE, MUST BE BETWEEN 1-13" and Stop.
+Initialize an array count[1..13] with all values = 0.
+Increment the frequency of each entered card:
+
+count[a] = count[a] + 1
+count[b] = count[b] + 1
+count[c] = count[c] + 1
+count[d] = count[d] + 1
+count[e] = count[e] + 1
+
+Initialize two variables: three = 0, two = 0.
+For each card value from 1 to 13 (done without loop in your program):
+
+If count[i] = 3, set three = 1.
+If count[i] = 2, set two = 1.
+
+After all checks, test the condition:
+
+If three = 1 AND two = 1, then Output "The Hand Is A Full House".
+OTHERWISE, Output "The Hand Is Not A Full House".
+
+Stop
