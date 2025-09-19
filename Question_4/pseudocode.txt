@@ -1,43 +1,57 @@
-Start
+BEGIN
 
-Input a, b, c, d, e
+DISPLAY "Enter 5 card ranks (between 1 and 13)"
+READ card1, card2, card3, card4, card5
 
-IF (a < 1 OR a > 13 OR
-    b < 1 OR b > 13 OR
-    c < 1 OR c > 13 OR
-    d < 1 OR d > 13 OR
-    e < 1 OR e > 13) THEN
-       Output "INVALID CARD VALUE, MUST BE BETWEEN 1-13"
-       Stop
-END IF
+SET rank1 = card1
+SET rank1count = 1
+SET rank2count = 0
 
-Initialize count[1..13] = 0
-
-count[a] = count[a] + 1
-count[b] = count[b] + 1
-count[c] = count[c] + 1
-count[d] = count[d] + 1
-count[e] = count[e] + 1
-
-Set three = 0
-Set two = 0
-
-IF count[1] = 3 THEN three = 1
-IF count[1] = 2 THEN two = 1
-
-IF count[2] = 3 THEN three = 1
-IF count[2] = 2 THEN two = 1
-
-IF count[3] = 3 THEN three = 1
-IF count[3] = 2 THEN two = 1
-
-...
-(repeat for count[4] to count[13])
-
-IF (three = 1 AND two = 1) THEN
-       Output "The Hand Is A Full House."
+IF card2 equals rank1 THEN
+    INCREASE rank1count by 1
 ELSE
-       Output "The Hand Is Not A Full House."
+    SET rank2 = card2
+    INCREASE rank2count by 1
 END IF
 
-Stop
+IF card3 equals rank1 THEN
+    INCREASE rank1count by 1
+ELSE
+    IF rank2count = 0 THEN
+        SET rank2 = card3
+        INCREASE rank2count by 1
+    ELSE IF card3 equals rank2 THEN
+        INCREASE rank2count by 1
+    END IF
+END IF
+
+IF card4 equals rank1 THEN
+    INCREASE rank1count by 1
+ELSE
+    IF rank2count = 0 THEN
+        SET rank2 = card4
+        INCREASE rank2count by 1
+    ELSE IF card4 equals rank2 THEN
+        INCREASE rank2count by 1
+    END IF
+END IF
+
+IF card5 equals rank1 THEN
+    INCREASE rank1count by 1
+ELSE
+    IF rank2count = 0 THEN
+        SET rank2 = card5
+        INCREASE rank2count by 1
+    ELSE IF card5 equals rank2 THEN
+        INCREASE rank2count by 1
+    END IF
+END IF
+
+IF (rank1count = 3 AND rank2count = 2)
+   OR (rank1count = 2 AND rank2count = 3) THEN
+    DISPLAY "This Hand Is A Poker Full House"
+ELSE
+    DISPLAY "This Hand Is Not A Poker Full House"
+END IF
+
+END
